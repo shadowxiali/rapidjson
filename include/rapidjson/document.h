@@ -2526,6 +2526,7 @@ public:
     friend class GenericValue;
 
     GenericArray(const GenericArray& rhs) : value_(rhs.value_) {}
+    // This operator= will call value assign, but in the Array read only env, it must address copy, is it intention?
     GenericArray& operator=(const GenericArray& rhs) { value_ = rhs.value_; return *this; }
     ~GenericArray() {}
 
